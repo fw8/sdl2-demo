@@ -1,8 +1,0 @@
-Anmerkung fuer OSX:
-
-Um die SDL2-Bibliotheken nutzen zu können müssen folgende Pakete per "brew" installiert werden:
-
-brew install sdl2
-brew install sdl2_image
-brew install sdl2_ttf
-brew install sdl2_gfx
