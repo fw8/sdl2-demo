@@ -38,8 +38,10 @@ void booom(unsigned int time)
 	// Warten auf Tastendruck 'q'
 	while (!g_has_quit())
 	{
-		if (g_key(&key)) {
-			if (key == 'q') return;
+		if (g_key(&key))
+		{
+			if (key == 'q')
+				return;
 		}
 	}
 }
@@ -58,14 +60,14 @@ int main(int argc, char **argv)
 	int key;
 
 	// Weltraum erzeugen und mit Planeten/Asteroiden fuellen
-	vector<Objekt*> weltraum;
+	vector<Objekt *> weltraum;
 
 	weltraum.push_back(new Asteroid("A-1", Vector(100, 100), 30, 30, 3));
 	weltraum.push_back(new Asteroid("A-2", Vector(300, 700), 60, 280, 2));
 	weltraum.push_back(new Asteroid("A-3", Vector(-50, 300), 30, 180, 3));
 	weltraum.push_back(new Asteroid("A-4", Vector(0, -200), 60, 300, 5));
 	weltraum.push_back(new Planet("Erde", Vector(400, 400), 200));
-	
+
 	// Raumschiff erzeugen
 	Raumschiff eagle("Eagle", Vector(600, 600), 0, 1000, 100);
 
@@ -92,7 +94,6 @@ int main(int argc, char **argv)
 	{
 		/* Bild loeschen, immer am Anfang der Schleife */
 		g_clear(0, 0, 0, 255);
-
 
 		// Tastatur einlesen und entsprechen darauf reagieren
 
@@ -141,8 +142,8 @@ int main(int argc, char **argv)
 
 		// Treibstoff und Zeit anzeigen
 
-  	snprintf(text, sizeof(text), "Zeit: %d", time++);
-  	g_render_text(600, 10, text, g_rgb(0xff, 0xff, 0xff));
+		snprintf(text, sizeof(text), "Zeit: %d", time++);
+		g_render_text(600, 10, text, g_rgb(0xff, 0xff, 0xff));
 
 		/* Bild anzeigen, immer am Ende der Schleife */
 		g_show();
